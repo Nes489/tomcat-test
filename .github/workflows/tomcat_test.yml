@@ -29,5 +29,39 @@ jobs:
                 name: xashy-app
                 path: target/*.war
 
+    deploy-artifact:
+        runs-on: ubuntu-latest
+        needs: maven_build
+        steps:
+            - name: clone repository
+              uses: actions/checkout@v3
+
+            - name: install Java and Maven
+              uses: actions/setup-java@v3
+              with:
+                distribution: 'adopt'
+                java-version: '11'
+
+            - name: artifact download
+              uses: actions/download-artifact@v3
+              with: 
+                name: xashy-app
+                path: ~/
+
+            - name: key upload
+              run: |
+                echo ${{ secrets.KEY_FILE}} > ~/tomcat.pem
+                sudo chmod 400 ~/tomcat.pem  
+
+            - name: uploading to tomcat server
+              run: sudo scp -i ~/tomcat.pem -o StrictHostKeyChecking=no ~/*.war ec2-user@18.118.254.70:/opt/tomcat9/webapps
+
+
+                
+                
+
+
+                     
+
 
 
