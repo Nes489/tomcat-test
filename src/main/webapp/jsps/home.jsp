@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Xashy Web Application Project.</h1>
+<h1 align="center">Welcome to Xashy Web Application Project by Nessy.</h1>
 <h1 align="center">We are developing and supporting quality Software Solutions to millions of clients globally.
 	           We are raising millionaires in IT automation.
 we offer AWS and DevOps training and our next class starts in August 2nd </h1>
@@ -37,7 +37,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
                 Xashy Tech, 
 		Maryland, USA
 		+1 202 367 6985,
-		info@xashyinc.com.com
+		info@xashyinc.com.
 		<br>
 		<a href="mailto:info@xashyinc.com">Mail to Xashy Tech</a>
 	</span>
